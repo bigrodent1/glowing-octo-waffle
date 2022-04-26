@@ -1,0 +1,10 @@
+SecurityEvent
+| where tostring(EventID) contains "xxxx"
+
+SecurityEvent
+| where tostring(EventID) startswith "47"
+| summarize count() by EventID , Activity
+
+SecurityEvent
+| where tostring(EventID) contains "4704"
+| where Account !contains "$"
